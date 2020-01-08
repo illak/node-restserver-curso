@@ -16,10 +16,10 @@ process.env.NODE_ENV = process.env.NODE_ENV || 'dev'
 // =============================
 let urlDB;
 
-// if( process.env.NODE_ENV === 'dev' ){
-//     urlDB = 'mongodb://localhost:27017/cafe';
-// } else {
-     urlDB = 'mongodb+srv://illak:euXfuNenlRNTfe1Z@cluster0-cbdtu.gcp.mongodb.net/cafe?authSource=admin&replicaSet=Cluster0-shard-0&readPreference=primary&appname=MongoDB%20Compass%20Community&ssl=true';
-// }
+if( process.env.NODE_ENV === 'dev' ){
+    urlDB = 'mongodb://localhost:27017/cafe';
+} else {
+    urlDB = process.env.MONGO_URI;
+}
 
 process.env.URLDB = urlDB;
